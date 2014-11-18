@@ -1,1 +1,23 @@
-Hello World
+    <!DOCTYPE html>
+    <html ng-app>
+    <head>
+      <title>Sprawdź ile papierosów pochłaniasz podczas biegania w Krakowie</title>  
+      <meta charset="UTF-8" />
+      <!-- load angular and angular route via CDN -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    </head>
+    <body>
+    <h3>Sprawdź ile papierosów pochłaniasz podczas biegania po polu w Krakowie</h3>
+        <div id="main">
+
+            <!-- angular templating -->
+            <!-- this is where content will be injected -->
+          <form >
+          Ile km przebiegłeś po polu  <input ng-model="val"/>
+          </form>    
+<br/>
+          Tyle wypaliłeś papierosów = {{val * 5}} sztuk
+        </div>
+
+    </body>
+    </html>
