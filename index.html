@@ -3,21 +3,34 @@
     <head>
       <title>Sprawdź ile papierosów pochłaniasz podczas biegania w Krakowie</title>  
       <meta charset="UTF-8" />
+      <style type="text/css">
+      body{
+  /*background: #648880;      }*/
+      </style>
       <!-- load angular and angular route via CDN -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+      <script type="text/javascript">
+        function Ctrl($scope){
+           // $scope.val = null;
+
+            $scope.isNumber= function (n) {
+              return !isNaN(parseFloat(n)) && isFinite(n);
+          }
+        }
+      </script>
     </head>
     <body>
     <h3>Sprawdź ile papierosów pochłaniasz podczas biegania po polu w Krakowie</h3>
         <div id="main">
-
             <!-- angular templating -->
             <!-- this is where content will be injected -->
           <form >
           Ile km przebiegłeś po polu  <input ng-model="val"/>
           </form>    
-<br/>
-          Tyle wypaliłeś papierosów = {{val * 5}} sztuk
+	<br/>
+          Tyle wypaliłeś papierosów <span  ng-controller="Ctrl" ng-show="isNumber(val)">= {{val * 5}} sztuk.</span>        
         </div>
-
+        <img src="http://www.freeimages.com/assets/182956/1829557024/silhouette-of-runner-1136556-m.jpg"> =>
+        <img src="http://www.freeimages.com/assets/182982/1829813732/untitled-1391828-m.jpg">
     </body>
     </html>
